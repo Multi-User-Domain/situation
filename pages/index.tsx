@@ -13,7 +13,7 @@ import {
   LogoutButton,
 } from "@inrupt/solid-ui-react";
 
-import LoginForm from "../components/loginForm";
+import { LoginForm } from "@multi-user-domain/mud-lib";
 
 export default function Home(): React.ReactElement {
   const { session } = useSession();
