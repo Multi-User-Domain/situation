@@ -13,7 +13,10 @@ import {
   LogoutButton,
 } from "@inrupt/solid-ui-react";
 
-import { LoginForm } from "@multi-user-domain/mud-lib";
+import {
+  LoginForm,
+  MudAccountProvider
+} from "@multi-user-domain/mud-lib";
 
 export default function Home(): React.ReactElement {
   const { session } = useSession();
@@ -45,8 +48,10 @@ export default function Home(): React.ReactElement {
   );
 
   return (
-    <Container>
+    <MudAccountProvider webId={webId}>
+      <Container>
         {header}
-    </Container>
+      </Container>
+    </MudAccountProvider>
     );
 }
