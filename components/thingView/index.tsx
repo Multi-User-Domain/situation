@@ -14,8 +14,8 @@ interface IThingView {
 export default function ThingView({thing} : IThingView) : React.ReactElement {
 
     return (
-        <Container>
-            <Center><ThingDepiction thing={thing}></ThingDepiction></Center>
+        <Container marginBottom="20px">
+            <Center><ThingDepiction thing={thing} maxHeight="10vh" marginBottom="10px"></ThingDepiction></Center>
             <Center><h1>{getThingName(thing)}</h1></Center>
             <Center><h3>{getStringNoLocale(thing, RDF.type)}</h3></Center>
         </Container>

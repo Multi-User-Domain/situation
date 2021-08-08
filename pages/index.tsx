@@ -18,6 +18,8 @@ import {
   MudAccountProvider
 } from "@multi-user-domain/mud-lib";
 
+import SocialFeed from "../components/socialFeed";
+
 export default function Home(): React.ReactElement {
   const { session } = useSession();
   const { webId } = session.info;
@@ -51,6 +53,9 @@ export default function Home(): React.ReactElement {
     <MudAccountProvider webId={webId}>
       <Container>
         {header}
+      </Container>
+      <Container>
+        <SocialFeed />
       </Container>
     </MudAccountProvider>
     );
