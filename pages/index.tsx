@@ -5,7 +5,6 @@ import {
   Box,
   Button,
   Container,
-  useDisclosure,
   Heading
 } from "@chakra-ui/react";
 
@@ -13,17 +12,12 @@ import {
   LogoutButton,
 } from "@inrupt/solid-ui-react";
 
-import {
-  LoginForm,
-  MudAccountProvider
-} from "@multi-user-domain/mud-lib";
-
 import SocialFeed from "../components/socialFeed";
+import { LoginForm } from "../components/loginForm";
+import { MudAccountProvider } from "../context/mudAccountContext";
 
 export default function Home(): React.ReactElement {
   const { session } = useSession();
-  const { webId } = session.info;
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   if (!session.info.isLoggedIn) {
     return <LoginForm />;
@@ -50,12 +44,12 @@ export default function Home(): React.ReactElement {
   );
 
   return (
-    <MudAccountProvider webId={webId}>
+    <MudAccountProvider>
       <Container>
         {header}
       </Container>
       <Container>
-        <SocialFeed />
+        
       </Container>
     </MudAccountProvider>
     );
