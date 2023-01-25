@@ -14,6 +14,7 @@ import {
   LogoutButton,
 } from "@inrupt/solid-ui-react";
 
+import { Map } from "../components/map";
 import { LoginForm } from "../components/loginForm";
 import { MudAccountProvider } from "../context/mudAccountContext";
 
@@ -31,7 +32,7 @@ export default function Home(): React.ReactElement {
   const { session } = useSession();
 
   let content = null;
-  if (!session.info.isLoggedIn) content = (
+  if (session.info.isLoggedIn) content = (
     <LoginForm />
   );
 
@@ -62,7 +63,7 @@ export default function Home(): React.ReactElement {
         {header}
       </Container>
       <Container>
-        
+        <Map></Map>
       </Container>
       </>
     );
