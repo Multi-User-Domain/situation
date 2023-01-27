@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './pages/index';
+import Home from "./components/home";
+import Index from './pages/index';
 
-ReactDOM.render(<Home></Home>, document.querySelector('#root'));
+ReactDOM.render(<Index><Home></Home></Index>, document.querySelector('#root'));

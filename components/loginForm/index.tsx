@@ -31,7 +31,7 @@ export function LoginForm({
           onChange={(e) => setIdp(e.target.value)}
         />
         <InputRightAddon>
-          <LoginButton oidcIssuer={idp} redirectUrl={redirectUrl}>
+          <LoginButton oidcIssuer={idp} redirectUrl={redirectUrl} onError={(err) => {console.error("arg!"); console.error(err);}}>
             <Button variant="contained" color="primary">
               Log&nbsp;in or Signup
             </Button>
