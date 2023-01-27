@@ -32,8 +32,16 @@ export default function Home(): React.ReactElement {
   const { session } = useSession();
 
   let content = null;
-  if (session.info.isLoggedIn) content = (
-    <LoginForm />
+  if (!session.info.isLoggedIn) content = (
+    <Container marginTop={10}>
+      <Flex marginBottom={10}>
+          <Box alignSelf="flex-start">
+            <Heading>Situation</Heading>
+          </Box>
+      </Flex>
+
+      <LoginForm />
+    </Container>
   );
 
   else {
